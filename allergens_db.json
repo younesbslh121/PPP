@@ -1,0 +1,352 @@
+{
+  "BISSARA(feves puree)": {
+    "allergens": ["légumineuses"],
+    "description": "Purée de fèves traditionnelle",
+    "alternatives": ["zaalouk", "tomatoes and onion salad"]
+  },
+  "FEVES with sauce": {
+    "allergens": ["légumineuses"],
+    "description": "Fèves en sauce",
+    "alternatives": ["zaalouk", "TAKTOUKA"]
+  },
+  "Feet of beef": {
+    "allergens": ["viande"],
+    "description": "Pieds de bœuf mijotés",
+    "alternatives": ["fish and vegetables", "lentils"]
+  },
+  "TAKTOUKA": {
+    "allergens": [],
+    "description": "Salade cuite de poivrons et tomates",
+    "alternatives": []
+  },
+  "amlou": {
+    "allergens": ["fruits à coque"],
+    "description": "Pâte d'amandes et argan",
+    "alternatives": ["jam", "dates"]
+  },
+  "apple": {
+    "allergens": [],
+    "description": "Pomme fraîche",
+    "alternatives": []
+  },
+  "bahla": {
+    "allergens": ["gluten"],
+    "description": "Pain traditionnel",
+    "alternatives": ["dates", "orange"]
+  },
+  "banana": {
+    "allergens": [],
+    "description": "Banane fraîche",
+    "alternatives": []
+  },
+  "basbousa": {
+    "allergens": ["gluten", "lait", "fruits à coque"],
+    "description": "Gâteau de semoule",
+    "alternatives": ["dates", "orange"]
+  },
+  "batbout": {
+    "allergens": ["gluten"],
+    "description": "Pain marocain moelleux",
+    "alternatives": ["traditional bread"]
+  },
+  "beghrir": {
+    "allergens": ["gluten", "lait"],
+    "description": "Crêpes mille trous",
+    "alternatives": ["traditional bread", "harcha"]
+  },
+  "better beldi": {
+    "allergens": ["gluten", "lait"],
+    "description": "Beurre traditionnel",
+    "alternatives": ["jam", "amlou"]
+  },
+  "briouate  with almonds": {
+    "allergens": ["gluten", "fruits à coque"],
+    "description": "Briouates aux amandes",
+    "alternatives": ["chebakia", "gazelle horn"]
+  },
+  "caesar salad": {
+    "allergens": ["gluten", "œufs", "lait"],
+    "description": "Salade César",
+    "alternatives": ["tomatoes and onion salad"]
+  },
+  "chebakia": {
+    "allergens": ["gluten", "sésame", "miel"],
+    "description": "Pâtisserie au miel",
+    "alternatives": ["gazelle horn", "dates"]
+  },
+  "chicken basstila": {
+    "allergens": ["gluten", "œufs", "fruits à coque"],
+    "description": "Pastilla au poulet",
+    "alternatives": ["roasted chicken", "chicken with potatoes and olives"]
+  },
+  "chicken nuggets": {
+    "allergens": ["gluten", "œufs"],
+    "description": "Nuggets de poulet",
+    "alternatives": ["roasted chicken", "meat brochettes"]
+  },
+  "chicken with potatoes and olives": {
+    "allergens": ["viande"],
+    "description": "Poulet aux pommes de terre",
+    "alternatives": ["fish and vegetables", "tagine with vegetables"]
+  },
+  "chocolate cake": {
+    "allergens": ["gluten", "œufs", "lait"],
+    "description": "Gâteau au chocolat",
+    "alternatives": ["dates", "orange"]
+  },
+  "couscous": {
+    "allergens": ["gluten"],
+    "description": "Couscous traditionnel",
+    "alternatives": ["tagine with vegetables", "lentils"]
+  },
+  "crackers with almonds (ghriba)": {
+    "allergens": ["gluten", "fruits à coque"],
+    "description": "Ghriba aux amandes",
+    "alternatives": ["fekkas", "kaak"]
+  },
+  "croissant": {
+    "allergens": ["gluten", "lait", "œufs"],
+    "description": "Croissant français",
+    "alternatives": ["batbout", "msamen"]
+  },
+  "dates": {
+    "allergens": [],
+    "description": "Dattes fraîches",
+    "alternatives": []
+  },
+  "fekkas": {
+    "allergens": ["gluten", "fruits à coque"],
+    "description": "Biscuits croquants",
+    "alternatives": ["kaak"]
+  },
+  "fish and vegetables": {
+    "allergens": ["poisson"],
+    "description": "Poisson aux légumes",
+    "alternatives": ["tagine with vegetables", "lentils"]
+  },
+  "fish basstila": {
+    "allergens": ["poisson", "gluten"],
+    "description": "Pastilla au poisson",
+    "alternatives": ["chicken basstila", "roasted chicken"]
+  },
+  "french fries": {
+    "allergens": [],
+    "description": "Frites",
+    "alternatives": []
+  },
+  "fried calamari": {
+    "allergens": ["fruits de mer", "gluten"],
+    "description": "Calamars frits",
+    "alternatives": ["fish and vegetables"]
+  },
+  "gazelle horn": {
+    "allergens": ["gluten", "fruits à coque"],
+    "description": "Cornes de gazelle",
+    "alternatives": ["chebakia", "dates"]
+  },
+  "hamburger": {
+    "allergens": ["gluten", "viande", "œufs"],
+    "description": "Hamburger",
+    "alternatives": ["meat brochettes", "roasted chicken"]
+  },
+  "harcha": {
+    "allergens": ["gluten", "lait"],
+    "description": "Galette de semoule",
+    "alternatives": ["batbout", "traditional bread"]
+  },
+  "harira": {
+    "allergens": ["gluten", "légumineuses"],
+    "description": "Soupe traditionnelle",
+    "alternatives": ["lentils", "zaalouk"]
+  },
+  "jam": {
+    "allergens": [],
+    "description": "Confiture",
+    "alternatives": []
+  },
+  "kaak": {
+    "allergens": ["gluten", "sésame"],
+    "description": "Biscuits au sésame",
+    "alternatives": ["fekkas"]
+  },
+  "lasagne": {
+    "allergens": ["gluten", "lait", "œufs"],
+    "description": "Lasagnes",
+    "alternatives": ["couscous", "spagetti"]
+  },
+  "lentils": {
+    "allergens": ["légumineuses"],
+    "description": "Lentilles cuisinées",
+    "alternatives": ["tagine with vegetables", "zaalouk"]
+  },
+  "liver with sauce": {
+    "allergens": ["viande"],
+    "description": "Foie en sauce",
+    "alternatives": ["fish and vegetables", "lentils"]
+  },
+  "maakouda": {
+    "allergens": ["gluten"],
+    "description": "Beignets de pommes de terre",
+    "alternatives": ["french fries"]
+  },
+  "meat brochettes": {
+    "allergens": ["viande"],
+    "description": "Brochettes de viande",
+    "alternatives": ["fish and vegetables", "roasted chicken"]
+  },
+  "meatball with tomato sauce": {
+    "allergens": ["viande", "gluten", "œufs"],
+    "description": "Boulettes de viande",
+    "alternatives": ["lentils", "tagine with vegetables"]
+  },
+  "mhancha": {
+    "allergens": ["gluten", "fruits à coque"],
+    "description": "Serpent aux amandes",
+    "alternatives": ["gazelle horn", "chebakia"]
+  },
+  "msamen": {
+    "allergens": ["gluten", "lait"],
+    "description": "Crêpes feuilletées",
+    "alternatives": ["beghrir", "batbout"]
+  },
+  "nougat": {
+    "allergens": ["fruits à coque", "miel"],
+    "description": "Nougat",
+    "alternatives": ["dates"]
+  },
+  "omelette": {
+    "allergens": ["œufs"],
+    "description": "Omelette",
+    "alternatives": ["TAKTOUKA", "zaalouk"]
+  },
+  "orange": {
+    "allergens": [],
+    "description": "Orange fraîche",
+    "alternatives": []
+  },
+  "paella": {
+    "allergens": ["fruits de mer", "viande"],
+    "description": "Paella",
+    "alternatives": ["couscous", "tagine with vegetables"]
+  },
+  "pear": {
+    "allergens": [],
+    "description": "Poire fraîche",
+    "alternatives": []
+  },
+  "pizza": {
+    "allergens": ["gluten", "lait"],
+    "description": "Pizza",
+    "alternatives": ["batbout", "msamen"]
+  },
+  "rfissa": {
+    "allergens": ["gluten", "viande"],
+    "description": "Rfissa traditionnelle",
+    "alternatives": ["couscous", "tagine with vegetables"]
+  },
+  "rghayf": {
+    "allergens": ["gluten", "lait"],
+    "description": "Crêpes marocaines",
+    "alternatives": ["msamen", "beghrir"]
+  },
+  "roasted chicken": {
+    "allergens": ["viande"],
+    "description": "Poulet rôti",
+    "alternatives": ["fish and vegetables", "tagine with vegetables"]
+  },
+  "salmon": {
+    "allergens": ["poisson"],
+    "description": "Saumon",
+    "alternatives": ["tagine with vegetables", "lentils"]
+  },
+  "seffa": {
+    "allergens": ["gluten", "lait"],
+    "description": "Seffa sucrée",
+    "alternatives": ["dates", "orange"]
+  },
+  "seffa with rice": {
+    "allergens": ["lait"],
+    "description": "Seffa au riz",
+    "alternatives": ["dates", "orange"]
+  },
+  "sellou": {
+    "allergens": ["fruits à coque", "sésame"],
+    "description": "Selloou traditionnel",
+    "alternatives": ["dates", "amlou"]
+  },
+  "sfenje": {
+    "allergens": ["gluten"],
+    "description": "Beignets marocains",
+    "alternatives": ["batbout", "harcha"]
+  },
+  "snowballs": {
+    "allergens": ["gluten", "lait", "fruits à coque"],
+    "description": "Boules de neige",
+    "alternatives": ["dates", "orange"]
+  },
+  "spagetti": {
+    "allergens": ["gluten"],
+    "description": "Spaghettis",
+    "alternatives": ["couscous"]
+  },
+  "sweet bread": {
+    "allergens": ["gluten", "lait", "œufs"],
+    "description": "Pain sucré",
+    "alternatives": ["dates", "orange"]
+  },
+  "tagine with artichokes and peas": {
+    "allergens": ["légumes"],
+    "description": "Tajine aux artichauts",
+    "alternatives": ["tagine with vegetables"]
+  },
+  "tagine with beef": {
+    "allergens": ["viande"],
+    "description": "Tajine au bœuf",
+    "alternatives": ["tagine with vegetables", "lentils"]
+  },
+  "tagine with quince": {
+    "allergens": ["viande"],
+    "description": "Tajine au coing",
+    "alternatives": ["tagine with vegetables"]
+  },
+  "tagine with vegetables": {
+    "allergens": [],
+    "description": "Tajine végétarien",
+    "alternatives": []
+  },
+  "tkalya": {
+    "allergens": ["viande"],
+    "description": "Tkalya traditionnelle",
+    "alternatives": ["lentils", "tagine with vegetables"]
+  },
+  "tomatoes and onion salad": {
+    "allergens": [],
+    "description": "Salade tomates oignons",
+    "alternatives": []
+  },
+  "traditional bread": {
+    "allergens": ["gluten"],
+    "description": "Pain traditionnel",
+    "alternatives": []
+  },
+  "traditional macaroon": {
+    "allergens": ["fruits à coque", "œufs"],
+    "description": "Macarons traditionnels",
+    "alternatives": ["dates"]
+  },
+  "white beans with tomatoes": {
+    "allergens": ["légumineuses"],
+    "description": "Haricots blancs",
+    "alternatives": ["tagine with vegetables", "zaalouk"]
+  },
+  "zaalouk": {
+    "allergens": [],
+    "description": "Caviar d'aubergines",
+    "alternatives": []
+  },
+  "zitoun": {
+    "allergens": [],
+    "description": "Olives",
+    "alternatives": []
+  }
+}
