@@ -1,0 +1,59 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1780591560.865830   24551 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+INFO:     Started server process [24551]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:57000 - "GET / HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:57000 - "GET /styles.css HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:57006 - "GET /app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57006 - "GET /api/config HTTP/1.1" 200 OK
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 715ms/step[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m1s[0m 726ms/step
+/home/younes/env_ppp/lib/python3.10/site-packages/keras/src/models/functional.py:241: UserWarning: The structure of `inputs` doesn't match the expected structure.
+Expected: [['input_layer']]
+Received: inputs=Tensor(shape=(1, 224, 224, 3))
+  warnings.warn(msg)
+W0000 00:00:1780591636.861003   24551 op_kernel.cc:1858] OP_REQUIRES failed at strided_slice_op.cc:117 : INVALID_ARGUMENT: slice index 9 of dimension 1 out of bounds.
+W0000 00:00:1780591636.861065   24551 local_rendezvous.cc:412] Local rendezvous is aborting with status: INVALID_ARGUMENT: slice index 9 of dimension 1 out of bounds.
+Grad-CAM error: {{function_node __wrapped__StridedSlice_device_/job:localhost/replica:0/task:0/device:CPU:0}} slice index 9 of dimension 1 out of bounds. [Op:StridedSlice] name: strided_slice/
+INFO:     127.0.0.1:56996 - "POST /api/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57162 - "GET /app.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:57162 - "GET /api/config HTTP/1.1" 200 OK
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 26ms/step[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 37ms/step
+W0000 00:00:1780591810.673293   24551 op_kernel.cc:1858] OP_REQUIRES failed at strided_slice_op.cc:117 : INVALID_ARGUMENT: slice index 19 of dimension 1 out of bounds.
+W0000 00:00:1780591810.673346   24551 local_rendezvous.cc:412] Local rendezvous is aborting with status: INVALID_ARGUMENT: slice index 19 of dimension 1 out of bounds.
+Grad-CAM error: {{function_node __wrapped__StridedSlice_device_/job:localhost/replica:0/task:0/device:CPU:0}} slice index 19 of dimension 1 out of bounds. [Op:StridedSlice] name: strided_slice/
+INFO:     127.0.0.1:42460 - "POST /api/analyze HTTP/1.1" 200 OK
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 25ms/step[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 36ms/step
+W0000 00:00:1780591837.506421   24551 op_kernel.cc:1858] OP_REQUIRES failed at strided_slice_op.cc:117 : INVALID_ARGUMENT: slice index 19 of dimension 1 out of bounds.
+Grad-CAM error: {{function_node __wrapped__StridedSlice_device_/job:localhost/replica:0/task:0/device:CPU:0}} slice index 19 of dimension 1 out of bounds. [Op:StridedSlice] name: strided_slice/
+INFO:     127.0.0.1:34768 - "POST /api/analyze HTTP/1.1" 200 OK
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 25ms/step[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 37ms/step
+W0000 00:00:1780591867.282138   24551 op_kernel.cc:1858] OP_REQUIRES failed at strided_slice_op.cc:117 : INVALID_ARGUMENT: slice index 19 of dimension 1 out of bounds.
+W0000 00:00:1780591867.282191   24551 local_rendezvous.cc:412] Local rendezvous is aborting with status: INVALID_ARGUMENT: slice index 19 of dimension 1 out of bounds.
+Grad-CAM error: {{function_node __wrapped__StridedSlice_device_/job:localhost/replica:0/task:0/device:CPU:0}} slice index 19 of dimension 1 out of bounds. [Op:StridedSlice] name: strided_slice/
+INFO:     127.0.0.1:45584 - "POST /api/analyze HTTP/1.1" 200 OK
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 26ms/step[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 39ms/step
+W0000 00:00:1780591940.377734   24551 op_kernel.cc:1858] OP_REQUIRES failed at strided_slice_op.cc:117 : INVALID_ARGUMENT: slice index 19 of dimension 1 out of bounds.
+Grad-CAM error: {{function_node __wrapped__StridedSlice_device_/job:localhost/replica:0/task:0/device:CPU:0}} slice index 19 of dimension 1 out of bounds. [Op:StridedSlice] name: strided_slice/
+INFO:     127.0.0.1:54632 - "POST /api/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54902 - "GET / HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:54906 - "GET /app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54902 - "GET /styles.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54902 - "GET /api/config HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56544 - "GET / HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56544 - "GET /styles.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56558 - "GET /app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56558 - "GET /api/config HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57666 - "GET / HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:57666 - "GET /styles.css HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:57672 - "GET /app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57672 - "GET /api/config HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55408 - "GET /styles.css HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:55412 - "GET /app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55412 - "GET /api/config HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45034 - "GET / HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:45034 - "GET /app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45048 - "GET /styles.css HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:45034 - "GET /api/config HTTP/1.1" 200 OK
