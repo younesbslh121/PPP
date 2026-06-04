@@ -1,0 +1,925 @@
+{
+  "class_names": {
+    "0": "BISSARA(feves puree)",
+    "1": "FEVES with sauce",
+    "2": "Feet of beef",
+    "3": "TAKTOUKA",
+    "4": "amlou",
+    "5": "apple",
+    "6": "bahla",
+    "7": "banana",
+    "8": "basbousa",
+    "9": "batbout",
+    "10": "beghrir",
+    "11": "better beldi",
+    "12": "briouate  with almonds",
+    "13": "caesar salad",
+    "14": "chebakia",
+    "15": "chicken basstila",
+    "16": "chicken nuggets",
+    "17": "chicken with potatoes and olives",
+    "18": "chocolate cake",
+    "19": "couscous",
+    "20": "crackers with almonds (ghriba)",
+    "21": "croissant",
+    "22": "dates",
+    "23": "fekkas",
+    "24": "fish and vegetables",
+    "25": "fish basstila",
+    "26": "french fries",
+    "27": "fried calamari",
+    "28": "gazelle horn",
+    "29": "hamburger",
+    "30": "harcha",
+    "31": "harira",
+    "32": "jam",
+    "33": "kaak",
+    "34": "lasagne",
+    "35": "lentils",
+    "36": "liver with sauce",
+    "37": "maakouda",
+    "38": "meat brochettes",
+    "39": "meatball with tomato sauce",
+    "40": "mhancha",
+    "41": "msamen",
+    "42": "nougat",
+    "43": "omelette",
+    "44": "orange",
+    "45": "paella",
+    "46": "pear",
+    "47": "pizza",
+    "48": "rfissa",
+    "49": "rghayf",
+    "50": "roasted chicken",
+    "51": "salmon",
+    "52": "seffa",
+    "53": "seffa with rice",
+    "54": "sellou",
+    "55": "sfenje",
+    "56": "snowballs",
+    "57": "spagetti",
+    "58": "sweet bread",
+    "59": "tagine with artichokes and peas",
+    "60": "tagine with beef",
+    "61": "tagine with quince",
+    "62": "tagine with vegetables",
+    "63": "tkalya",
+    "64": "tomatoes and onion salad",
+    "65": "traditional bread",
+    "66": "traditional macaroon",
+    "67": "white beans with tomatoes",
+    "68": "zaalouk",
+    "69": "zitoun"
+  },
+  "allergens_db": {
+    "BISSARA(feves puree)": {
+      "allergens": [
+        "légumineuses"
+      ],
+      "description": "Purée de fèves traditionnelle",
+      "alternatives": [
+        "zaalouk",
+        "tomatoes and onion salad"
+      ]
+    },
+    "FEVES with sauce": {
+      "allergens": [
+        "légumineuses"
+      ],
+      "description": "Fèves en sauce",
+      "alternatives": [
+        "zaalouk",
+        "TAKTOUKA"
+      ]
+    },
+    "Feet of beef": {
+      "allergens": [
+        "viande"
+      ],
+      "description": "Pieds de bœuf mijotés",
+      "alternatives": [
+        "fish and vegetables",
+        "lentils"
+      ]
+    },
+    "TAKTOUKA": {
+      "allergens": [],
+      "description": "Salade cuite de poivrons et tomates",
+      "alternatives": []
+    },
+    "amlou": {
+      "allergens": [
+        "fruits à coque"
+      ],
+      "description": "Pâte d'amandes et argan",
+      "alternatives": [
+        "jam",
+        "dates"
+      ]
+    },
+    "apple": {
+      "allergens": [],
+      "description": "Pomme fraîche",
+      "alternatives": []
+    },
+    "bahla": {
+      "allergens": [
+        "gluten"
+      ],
+      "description": "Pain traditionnel",
+      "alternatives": [
+        "dates",
+        "orange"
+      ]
+    },
+    "banana": {
+      "allergens": [],
+      "description": "Banane fraîche",
+      "alternatives": []
+    },
+    "basbousa": {
+      "allergens": [
+        "gluten",
+        "lait",
+        "fruits à coque"
+      ],
+      "description": "Gâteau de semoule",
+      "alternatives": [
+        "dates",
+        "orange"
+      ]
+    },
+    "batbout": {
+      "allergens": [
+        "gluten"
+      ],
+      "description": "Pain marocain moelleux",
+      "alternatives": [
+        "traditional bread"
+      ]
+    },
+    "beghrir": {
+      "allergens": [
+        "gluten",
+        "lait"
+      ],
+      "description": "Crêpes mille trous",
+      "alternatives": [
+        "traditional bread",
+        "harcha"
+      ]
+    },
+    "better beldi": {
+      "allergens": [
+        "gluten",
+        "lait"
+      ],
+      "description": "Beurre traditionnel",
+      "alternatives": [
+        "jam",
+        "amlou"
+      ]
+    },
+    "briouate  with almonds": {
+      "allergens": [
+        "gluten",
+        "fruits à coque"
+      ],
+      "description": "Briouates aux amandes",
+      "alternatives": [
+        "chebakia",
+        "gazelle horn"
+      ]
+    },
+    "caesar salad": {
+      "allergens": [
+        "gluten",
+        "œufs",
+        "lait"
+      ],
+      "description": "Salade César",
+      "alternatives": [
+        "tomatoes and onion salad"
+      ]
+    },
+    "chebakia": {
+      "allergens": [
+        "gluten",
+        "sésame",
+        "miel"
+      ],
+      "description": "Pâtisserie au miel",
+      "alternatives": [
+        "gazelle horn",
+        "dates"
+      ]
+    },
+    "chicken basstila": {
+      "allergens": [
+        "gluten",
+        "œufs",
+        "fruits à coque"
+      ],
+      "description": "Pastilla au poulet",
+      "alternatives": [
+        "roasted chicken",
+        "chicken with potatoes and olives"
+      ]
+    },
+    "chicken nuggets": {
+      "allergens": [
+        "gluten",
+        "œufs"
+      ],
+      "description": "Nuggets de poulet",
+      "alternatives": [
+        "roasted chicken",
+        "meat brochettes"
+      ]
+    },
+    "chicken with potatoes and olives": {
+      "allergens": [
+        "viande"
+      ],
+      "description": "Poulet aux pommes de terre",
+      "alternatives": [
+        "fish and vegetables",
+        "tagine with vegetables"
+      ]
+    },
+    "chocolate cake": {
+      "allergens": [
+        "gluten",
+        "œufs",
+        "lait"
+      ],
+      "description": "Gâteau au chocolat",
+      "alternatives": [
+        "dates",
+        "orange"
+      ]
+    },
+    "couscous": {
+      "allergens": [
+        "gluten"
+      ],
+      "description": "Couscous traditionnel",
+      "alternatives": [
+        "tagine with vegetables",
+        "lentils"
+      ]
+    },
+    "crackers with almonds (ghriba)": {
+      "allergens": [
+        "gluten",
+        "fruits à coque"
+      ],
+      "description": "Ghriba aux amandes",
+      "alternatives": [
+        "fekkas",
+        "kaak"
+      ]
+    },
+    "croissant": {
+      "allergens": [
+        "gluten",
+        "lait",
+        "œufs"
+      ],
+      "description": "Croissant français",
+      "alternatives": [
+        "batbout",
+        "msamen"
+      ]
+    },
+    "dates": {
+      "allergens": [],
+      "description": "Dattes fraîches",
+      "alternatives": []
+    },
+    "fekkas": {
+      "allergens": [
+        "gluten",
+        "fruits à coque"
+      ],
+      "description": "Biscuits croquants",
+      "alternatives": [
+        "kaak"
+      ]
+    },
+    "fish and vegetables": {
+      "allergens": [
+        "poisson"
+      ],
+      "description": "Poisson aux légumes",
+      "alternatives": [
+        "tagine with vegetables",
+        "lentils"
+      ]
+    },
+    "fish basstila": {
+      "allergens": [
+        "poisson",
+        "gluten"
+      ],
+      "description": "Pastilla au poisson",
+      "alternatives": [
+        "chicken basstila",
+        "roasted chicken"
+      ]
+    },
+    "french fries": {
+      "allergens": [],
+      "description": "Frites",
+      "alternatives": []
+    },
+    "fried calamari": {
+      "allergens": [
+        "fruits de mer",
+        "gluten"
+      ],
+      "description": "Calamars frits",
+      "alternatives": [
+        "fish and vegetables"
+      ]
+    },
+    "gazelle horn": {
+      "allergens": [
+        "gluten",
+        "fruits à coque"
+      ],
+      "description": "Cornes de gazelle",
+      "alternatives": [
+        "chebakia",
+        "dates"
+      ]
+    },
+    "hamburger": {
+      "allergens": [
+        "gluten",
+        "viande",
+        "œufs"
+      ],
+      "description": "Hamburger",
+      "alternatives": [
+        "meat brochettes",
+        "roasted chicken"
+      ]
+    },
+    "harcha": {
+      "allergens": [
+        "gluten",
+        "lait"
+      ],
+      "description": "Galette de semoule",
+      "alternatives": [
+        "batbout",
+        "traditional bread"
+      ]
+    },
+    "harira": {
+      "allergens": [
+        "gluten",
+        "légumineuses"
+      ],
+      "description": "Soupe traditionnelle",
+      "alternatives": [
+        "lentils",
+        "zaalouk"
+      ]
+    },
+    "jam": {
+      "allergens": [],
+      "description": "Confiture",
+      "alternatives": []
+    },
+    "kaak": {
+      "allergens": [
+        "gluten",
+        "sésame"
+      ],
+      "description": "Biscuits au sésame",
+      "alternatives": [
+        "fekkas"
+      ]
+    },
+    "lasagne": {
+      "allergens": [
+        "gluten",
+        "lait",
+        "œufs"
+      ],
+      "description": "Lasagnes",
+      "alternatives": [
+        "couscous",
+        "spagetti"
+      ]
+    },
+    "lentils": {
+      "allergens": [
+        "légumineuses"
+      ],
+      "description": "Lentilles cuisinées",
+      "alternatives": [
+        "tagine with vegetables",
+        "zaalouk"
+      ]
+    },
+    "liver with sauce": {
+      "allergens": [
+        "viande"
+      ],
+      "description": "Foie en sauce",
+      "alternatives": [
+        "fish and vegetables",
+        "lentils"
+      ]
+    },
+    "maakouda": {
+      "allergens": [
+        "gluten"
+      ],
+      "description": "Beignets de pommes de terre",
+      "alternatives": [
+        "french fries"
+      ]
+    },
+    "meat brochettes": {
+      "allergens": [
+        "viande"
+      ],
+      "description": "Brochettes de viande",
+      "alternatives": [
+        "fish and vegetables",
+        "roasted chicken"
+      ]
+    },
+    "meatball with tomato sauce": {
+      "allergens": [
+        "viande",
+        "gluten",
+        "œufs"
+      ],
+      "description": "Boulettes de viande",
+      "alternatives": [
+        "lentils",
+        "tagine with vegetables"
+      ]
+    },
+    "mhancha": {
+      "allergens": [
+        "gluten",
+        "fruits à coque"
+      ],
+      "description": "Serpent aux amandes",
+      "alternatives": [
+        "gazelle horn",
+        "chebakia"
+      ]
+    },
+    "msamen": {
+      "allergens": [
+        "gluten",
+        "lait"
+      ],
+      "description": "Crêpes feuilletées",
+      "alternatives": [
+        "beghrir",
+        "batbout"
+      ]
+    },
+    "nougat": {
+      "allergens": [
+        "fruits à coque",
+        "miel"
+      ],
+      "description": "Nougat",
+      "alternatives": [
+        "dates"
+      ]
+    },
+    "omelette": {
+      "allergens": [
+        "œufs"
+      ],
+      "description": "Omelette",
+      "alternatives": [
+        "TAKTOUKA",
+        "zaalouk"
+      ]
+    },
+    "orange": {
+      "allergens": [],
+      "description": "Orange fraîche",
+      "alternatives": []
+    },
+    "paella": {
+      "allergens": [
+        "fruits de mer",
+        "viande"
+      ],
+      "description": "Paella",
+      "alternatives": [
+        "couscous",
+        "tagine with vegetables"
+      ]
+    },
+    "pear": {
+      "allergens": [],
+      "description": "Poire fraîche",
+      "alternatives": []
+    },
+    "pizza": {
+      "allergens": [
+        "gluten",
+        "lait"
+      ],
+      "description": "Pizza",
+      "alternatives": [
+        "batbout",
+        "msamen"
+      ]
+    },
+    "rfissa": {
+      "allergens": [
+        "gluten",
+        "viande"
+      ],
+      "description": "Rfissa traditionnelle",
+      "alternatives": [
+        "couscous",
+        "tagine with vegetables"
+      ]
+    },
+    "rghayf": {
+      "allergens": [
+        "gluten",
+        "lait"
+      ],
+      "description": "Crêpes marocaines",
+      "alternatives": [
+        "msamen",
+        "beghrir"
+      ]
+    },
+    "roasted chicken": {
+      "allergens": [
+        "viande"
+      ],
+      "description": "Poulet rôti",
+      "alternatives": [
+        "fish and vegetables",
+        "tagine with vegetables"
+      ]
+    },
+    "salmon": {
+      "allergens": [
+        "poisson"
+      ],
+      "description": "Saumon",
+      "alternatives": [
+        "tagine with vegetables",
+        "lentils"
+      ]
+    },
+    "seffa": {
+      "allergens": [
+        "gluten",
+        "lait"
+      ],
+      "description": "Seffa sucrée",
+      "alternatives": [
+        "dates",
+        "orange"
+      ]
+    },
+    "seffa with rice": {
+      "allergens": [
+        "lait"
+      ],
+      "description": "Seffa au riz",
+      "alternatives": [
+        "dates",
+        "orange"
+      ]
+    },
+    "sellou": {
+      "allergens": [
+        "fruits à coque",
+        "sésame"
+      ],
+      "description": "Selloou traditionnel",
+      "alternatives": [
+        "dates",
+        "amlou"
+      ]
+    },
+    "sfenje": {
+      "allergens": [
+        "gluten"
+      ],
+      "description": "Beignets marocains",
+      "alternatives": [
+        "batbout",
+        "harcha"
+      ]
+    },
+    "snowballs": {
+      "allergens": [
+        "gluten",
+        "lait",
+        "fruits à coque"
+      ],
+      "description": "Boules de neige",
+      "alternatives": [
+        "dates",
+        "orange"
+      ]
+    },
+    "spagetti": {
+      "allergens": [
+        "gluten"
+      ],
+      "description": "Spaghettis",
+      "alternatives": [
+        "couscous"
+      ]
+    },
+    "sweet bread": {
+      "allergens": [
+        "gluten",
+        "lait",
+        "œufs"
+      ],
+      "description": "Pain sucré",
+      "alternatives": [
+        "dates",
+        "orange"
+      ]
+    },
+    "tagine with artichokes and peas": {
+      "allergens": [
+        "légumes"
+      ],
+      "description": "Tajine aux artichauts",
+      "alternatives": [
+        "tagine with vegetables"
+      ]
+    },
+    "tagine with beef": {
+      "allergens": [
+        "viande"
+      ],
+      "description": "Tajine au bœuf",
+      "alternatives": [
+        "tagine with vegetables",
+        "lentils"
+      ]
+    },
+    "tagine with quince": {
+      "allergens": [
+        "viande"
+      ],
+      "description": "Tajine au coing",
+      "alternatives": [
+        "tagine with vegetables"
+      ]
+    },
+    "tagine with vegetables": {
+      "allergens": [],
+      "description": "Tajine végétarien",
+      "alternatives": []
+    },
+    "tkalya": {
+      "allergens": [
+        "viande"
+      ],
+      "description": "Tkalya traditionnelle",
+      "alternatives": [
+        "lentils",
+        "tagine with vegetables"
+      ]
+    },
+    "tomatoes and onion salad": {
+      "allergens": [],
+      "description": "Salade tomates oignons",
+      "alternatives": []
+    },
+    "traditional bread": {
+      "allergens": [
+        "gluten"
+      ],
+      "description": "Pain traditionnel",
+      "alternatives": []
+    },
+    "traditional macaroon": {
+      "allergens": [
+        "fruits à coque",
+        "œufs"
+      ],
+      "description": "Macarons traditionnels",
+      "alternatives": [
+        "dates"
+      ]
+    },
+    "white beans with tomatoes": {
+      "allergens": [
+        "légumineuses"
+      ],
+      "description": "Haricots blancs",
+      "alternatives": [
+        "tagine with vegetables",
+        "zaalouk"
+      ]
+    },
+    "zaalouk": {
+      "allergens": [],
+      "description": "Caviar d'aubergines",
+      "alternatives": []
+    },
+    "zitoun": {
+      "allergens": [],
+      "description": "Olives",
+      "alternatives": []
+    }
+  },
+  "translations": {
+    "fr": {
+      "title": "Allergy for Moroccan Food AI",
+      "lbl-language": "🌐 Langue / Language",
+      "lbl-allergies": "🛡️ Profil Allergique",
+      "lbl-allergies-desc": "Sélectionnez vos allergies pour filtrer les plats :",
+      "btn-scanner": "Scanner Pro",
+      "btn-explain": "Expliquabilité AI",
+      "btn-stats": "Statistiques",
+      "btn-emergency": "Urgences Info",
+      "btn-about": "À propos",
+      "btn-tab-restaurants": "Restaurants",
+      "btn-add-journal": "Ajouter au Journal",
+      "lbl-daily-tracker": "Journal Nutritionnel du Jour",
+      "lbl-target-cal": "Objectif : 2000 kcal",
+      "lbl-added-journal": "Ajouté avec succès !",
+      "lbl-restaurants-title": "Restaurants Marocains Partenaires",
+      "lbl-filter-city": "Filtrer par ville :",
+      "lbl-all-cities": "Toutes les villes",
+      "lbl-restaurant-safe": "Sécurisé pour votre profil",
+      "lbl-restaurant-unsafe": "Contient vos allergènes",
+      "lbl-scan-section": "Scanner un plat",
+      "lbl-drag-drop": "Glissez-deposez une image ici",
+      "lbl-max-size": "JPG, PNG (max. 10MB)",
+      "btn-select-file": "Sélectionner un fichier",
+      "lbl-result-section": "Résultats de l'analyse",
+      "lbl-upload-prompt": "Importez une image pour démarrer l'analyse de sécurité",
+      "lbl-dish-name": "Plats Détectés (Top 3)",
+      "lbl-refinement": "Correction manuelle si nécessaire :",
+      "lbl-ingredients-title": "Composition du plat",
+      "lbl-ingredients-bold": "Ingrédients",
+      "lbl-allergens-bold": "Allergènes détectés",
+      "lbl-nutrition-title": "Profil Nutritionnel (Est. / 100g)",
+      "lbl-calories": "Calories (kcal)",
+      "lbl-proteins": "Protéines",
+      "lbl-carbs": "Glucides",
+      "lbl-fats": "Lipides",
+      "lbl-alternatives-title": "Alternatives Recommandées",
+      "btn-export": "Exporter le Rapport PDF",
+      "lbl-explain-desc": "Cette vue permet de visualiser les régions de l'image sur lesquelles le réseau de neurones convolutif s'est concentré pour identifier le plat. Les zones rouges représentent les zones d'influence maximales.",
+      "lbl-explain-prompt": "Veuillez d'abord scanner une image dans l'onglet 'Scanner Pro' pour afficher la carte d'activation.",
+      "lbl-original-img": "Image Originale",
+      "lbl-heatmap-img": "Carte d'Activation Grad-CAM",
+      "lbl-emergency-intro": "En cas de réaction allergique grave (choc anaphylactique), contactez immédiatement les services d'urgence :",
+      "lbl-samu-desc": "Urgences médicales et incendies",
+      "lbl-police-desc": "Urgences en zone urbaine",
+      "lbl-gendarmerie-desc": "Urgences en zone rurale",
+      "lbl-capm-desc": "Assistance en cas d'empoisonnement ou allergie sévère",
+      "lbl-symptom-title": "Signes de Choc Anaphylactique :",
+      "lbl-sym1": "Difficulté à respirer ou à avaler (gonflement de la gorge)",
+      "lbl-sym2": "Gonflement du visage, des lèvres ou de la langue",
+      "lbl-sym3": "Éruptions cutanées généralisées avec démangeaisons intenses",
+      "lbl-sym4": "Étourdissements, vertiges, ou perte de connaissance",
+      "lbl-sym5": "Nausées, vomissements ou crampes abdominales aiguës",
+      "lbl-symptom-warning": "L'administration d'un auto-injecteur d'adrénaline (Epipen) doit être effectuée immédiatement si prescrite.",
+      "lbl-safe-title": "Plat Compatible / Sûr",
+      "lbl-safe-desc": "Ce plat ne contient aucun de vos allergènes déclarés.",
+      "lbl-danger-title": "DANGER - Allergène Détecté !",
+      "lbl-danger-desc": "Attention : Ce plat contient des ingrédients dangereux pour vous"
+    },
+    "en": {
+      "title": "Allergy for Moroccan Food AI",
+      "lbl-language": "🌐 Language / Langue",
+      "lbl-allergies": "🛡️ Allergy Profile",
+      "lbl-allergies-desc": "Select your allergies to filter dishes:",
+      "btn-scanner": "Scanner Pro",
+      "btn-explain": "Explainability AI",
+      "btn-stats": "Statistics",
+      "btn-emergency": "Emergency Info",
+      "btn-about": "About",
+      "btn-tab-restaurants": "Restaurants",
+      "btn-add-journal": "Add to Journal",
+      "lbl-daily-tracker": "Daily Nutrition Journal",
+      "lbl-target-cal": "Goal: 2000 kcal",
+      "lbl-added-journal": "Added successfully!",
+      "lbl-restaurants-title": "Moroccan Partner Restaurants",
+      "lbl-filter-city": "Filter by city:",
+      "lbl-all-cities": "All Cities",
+      "lbl-restaurant-safe": "Safe for your profile",
+      "lbl-restaurant-unsafe": "Contains your allergens",
+      "lbl-scan-section": "Scan a dish",
+      "lbl-drag-drop": "Drag & drop an image here",
+      "lbl-max-size": "JPG, PNG (max. 10MB)",
+      "btn-select-file": "Select File",
+      "lbl-result-section": "Analysis Results",
+      "lbl-upload-prompt": "Import an image to start the safety analysis",
+      "lbl-dish-name": "Detected Dishes (Top 3)",
+      "lbl-refinement": "Manual correction if necessary:",
+      "lbl-ingredients-title": "Dish Composition",
+      "lbl-ingredients-bold": "Ingredients",
+      "lbl-allergens-bold": "Detected Allergens",
+      "lbl-nutrition-title": "Nutritional Profile (Est. / 100g)",
+      "lbl-calories": "Calories (kcal)",
+      "lbl-proteins": "Proteins",
+      "lbl-carbs": "Carbohydrates",
+      "lbl-fats": "Fats",
+      "lbl-alternatives-title": "Recommended Alternatives",
+      "btn-export": "Export PDF Report",
+      "lbl-explain-desc": "This view visualizes the regions of the image that the convolutional neural network focused on to identify the dish. Red regions represent areas of maximum influence.",
+      "lbl-explain-prompt": "Please first scan an image in the 'Scanner Pro' tab to display the activation map.",
+      "lbl-original-img": "Original Image",
+      "lbl-heatmap-img": "Grad-CAM Activation Map",
+      "lbl-emergency-intro": "In case of severe allergic reaction (anaphylactic shock), contact emergency services immediately:",
+      "lbl-samu-desc": "Medical emergencies and fires",
+      "lbl-police-desc": "Emergencies in urban zones",
+      "lbl-gendarmerie-desc": "Emergencies in rural zones",
+      "lbl-capm-desc": "Assistance in case of poisoning or severe allergy",
+      "lbl-symptom-title": "Signs of Anaphylactic Shock:",
+      "lbl-sym1": "Difficulty breathing or swallowing (throat swelling)",
+      "lbl-sym2": "Swelling of the face, lips, or tongue",
+      "lbl-sym3": "Generalized skin rashes with intense itching",
+      "lbl-sym4": "Dizziness, vertigo, or loss of consciousness",
+      "lbl-sym5": "Nausea, vomiting, or acute abdominal cramps",
+      "lbl-symptom-warning": "Administration of an adrenaline auto-injecter (Epipen) must be performed immediately if prescribed.",
+      "lbl-safe-title": "Compatible / Safe Dish",
+      "lbl-safe-desc": "This dish does not contain any of your declared allergens.",
+      "lbl-danger-title": "DANGER - Allergen Detected!",
+      "lbl-danger-desc": "Warning: This dish contains ingredients dangerous to you"
+    },
+    "ar": {
+      "title": "الذكاء الاصطناعي للحساسية الغذائية المغربية",
+      "lbl-language": "🌐 اللغة / Language",
+      "lbl-allergies": "🛡️ ملف الحساسية",
+      "lbl-allergies-desc": "حدد مسببات الحساسية الخاصة بك لتصفية الأطباق:",
+      "btn-scanner": "الماسح الاحترافي",
+      "btn-explain": "تفسير الذكاء الاصطناعي",
+      "btn-stats": "الإحصائيات",
+      "btn-emergency": "معلومات الطوارئ",
+      "btn-about": "حول التطبيق",
+      "btn-tab-restaurants": "المطاعم",
+      "btn-add-journal": "إضافة إلى السجل",
+      "lbl-daily-tracker": "سجل التغذية اليومي",
+      "lbl-target-cal": "الهدف: 2000 سعرة",
+      "lbl-added-journal": "تمت الإضافة بنجاح!",
+      "lbl-restaurants-title": "المطاعم المغربية الشريكة",
+      "lbl-filter-city": "تصفية حسب المدينة:",
+      "lbl-all-cities": "كل المدن",
+      "lbl-restaurant-safe": "آمن لملفك الشخصي",
+      "lbl-restaurant-unsafe": "يحتوي على مسببات حساسيتك",
+      "lbl-scan-section": "مسح طبق",
+      "lbl-drag-drop": "اسحب وأفلت صورة هنا",
+      "lbl-max-size": "JPG, PNG (بحد أقصى 10 ميجابايت)",
+      "btn-select-file": "اختر ملفاً",
+      "lbl-result-section": "نتائج التحليل",
+      "lbl-upload-prompt": "قم باستيراد صورة لبدء تحليل السلامة والوقاية",
+      "lbl-dish-name": "الأطباق المكتشفة (أفضل 3)",
+      "lbl-refinement": "تصحيح يدوي عند الحاجة:",
+      "lbl-ingredients-title": "مكونات الطبق",
+      "lbl-ingredients-bold": "المكونات",
+      "lbl-allergens-bold": "مسببات الحساسية المكتشفة",
+      "lbl-nutrition-title": "الملف الغذائي (تقديري / 100 جم)",
+      "lbl-calories": "السعرات الحرارية",
+      "lbl-proteins": "البروتينات",
+      "lbl-carbs": "الكربوهيدرات",
+      "lbl-fats": "الدهون",
+      "lbl-alternatives-title": "البدائل الموصى بها",
+      "btn-export": "تصدير تقرير PDF",
+      "lbl-explain-desc": "يتيح لك هذا العرض تصور مناطق الصورة التي ركزت عليها الشبكة العصبية لتحديد الطبق. تمثل المناطق الحمراء مناطق التأثير الأقصى.",
+      "lbl-explain-prompt": "يرجى أولاً مسح صورة في علامة التبويب 'الماسح الاحترافي' لعرض خريطة التنشيط.",
+      "lbl-original-img": "الصورة الأصلية",
+      "lbl-heatmap-img": "خريطة تنشيط Grad-CAM",
+      "lbl-emergency-intro": "في حالة حدوث رد فعل تحسسي شديد (صدمة الحساسية المفرطة)، اتصل بخدمات الطوارئ على الفور:",
+      "lbl-samu-desc": "الطوارئ الطبية والحرائق",
+      "lbl-police-desc": "الطوارئ في المناطق الحضرية",
+      "lbl-gendarmerie-desc": "الطوارئ في المناطق القروية",
+      "lbl-capm-desc": "المساعدة في حالة التسمم أو الحساسية الشديدة",
+      "lbl-symptom-title": "علامات صدمة الحساسية المفرطة:",
+      "lbl-sym1": "صعوبة في التنفس أو البلع (تورم الحلق)",
+      "lbl-sym2": "تورم الوجه أو الشفتين أو اللسان",
+      "lbl-sym3": "طفح جلدي عام مع حكة شديدة",
+      "lbl-sym4": "الدوخة أو الدوار أو فقدان الوعي",
+      "lbl-sym5": "الغثيان أو القيء أو تشنجات البطن الحادة",
+      "lbl-symptom-warning": "يجب إجراء حقن الأدرينالين الذاتي (Epipen) على الفور إذا كان موصوفاً طبيًا.",
+      "lbl-safe-title": "طبق متوافق / آمن",
+      "lbl-safe-desc": "هذا الطبق لا يحتوي على أي من مسببات الحساسية المعلنة لديك.",
+      "lbl-danger-title": "خطر - تم اكتشاف مسبب حساسية!",
+      "lbl-danger-desc": "تحذير: يحتوي هذا الطبق على مكونات خطرة عليك"
+    }
+  }
+}
