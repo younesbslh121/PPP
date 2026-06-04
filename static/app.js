@@ -75,19 +75,43 @@ document.addEventListener("DOMContentLoaded", () => {
     const imgOrigViewer = document.getElementById("img-orig-viewer");
     const imgHeatViewer = document.getElementById("img-heat-viewer");
     
-    // Load config from backend
-    fetch("/api/config")
-        .then(res => res.json())
-        .then(data => {
-            config = data;
-            initAllergensList();
-            initDishDropdown();
-            updateLanguageUI();
-            updateJournalUI();
-            renderRestaurants();
-            lucide.createIcons();
-        })
-        .catch(err => console.error("Error loading config:", err));
+    // Load config from backend, fallback to static JSON if offline (e.g. GitHub Pages)
+    function loadAppConfig() {
+        fetch("/api/config")
+            .then(res => {
+                if (!res.ok) throw new Error("Backend config status not OK");
+                return res.json();
+            })
+            .then(data => {
+                setupConfig(data);
+            })
+            .catch(err => {
+                console.warn("Backend /api/config not available. Falling back to static/config_fallback.json...", err);
+                fetch("config_fallback.json")
+                    .then(res => {
+                        if (!res.ok) throw new Error("Fallback config status not OK");
+                        return res.json();
+                    })
+                    .then(data => {
+                        setupConfig(data);
+                    })
+                    .catch(err2 => {
+                        console.error("Critical error: Failed to load fallback config:", err2);
+                    });
+            });
+    }
+
+    function setupConfig(data) {
+        config = data;
+        initAllergensList();
+        initDishDropdown();
+        updateLanguageUI();
+        updateJournalUI();
+        renderRestaurants();
+        lucide.createIcons();
+    }
+
+    loadAppConfig();
         
     // --- TABS NAVIGATION ---
     const tabBtns = document.querySelectorAll(".tab-btn");

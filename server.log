@@ -57,3 +57,7 @@ INFO:     127.0.0.1:45034 - "GET / HTTP/1.1" 304 Not Modified
 INFO:     127.0.0.1:45034 - "GET /app.js HTTP/1.1" 200 OK
 INFO:     127.0.0.1:45048 - "GET /styles.css HTTP/1.1" 304 Not Modified
 INFO:     127.0.0.1:45034 - "GET /api/config HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52362 - "GET / HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:52362 - "GET /styles.css HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:52370 - "GET /app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52370 - "GET /api/config HTTP/1.1" 200 OK
