@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allergy AI Pro - Moroccan Food Intelligence</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo-area">
+                <i data-lucide="shield-alert" class="logo-icon"></i>
+                <div class="logo-text">
+                    <span class="logo-title">Allergy AI</span>
+                    <span class="logo-subtitle">Pro version</span>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="section-title" id="lbl-language">🌐 Language / Langue</h3>
+                <div class="lang-selector">
+                    <button class="lang-btn active" data-lang="fr">Français 🇫🇷</button>
+                    <button class="lang-btn" data-lang="en">English 🇬🇧</button>
+                    <button class="lang-btn" data-lang="ar">العربية 🇲🇦</button>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="section-title" id="lbl-allergies">🛡️ Profil Allergique</h3>
+                <p class="section-desc" id="lbl-allergies-desc">Sélectionnez vos allergies pour filtrer les plats :</p>
+                <div class="allergen-grid" id="allergen-list">
+                    <!-- Dynamic Checklist -->
+                </div>
+            </div>
+            
+            <div class="sidebar-footer">
+                <p>© 2026 Allergy AI Pro</p>
+                <p>World Cup 2030 Morocco 🇲🇦</p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Banner Header -->
+            <header class="top-header">
+                <div class="header-text">
+                    <h1 class="main-title" id="lbl-title">Allergy for Moroccan Food AI</h1>
+                    <p class="main-subtitle" id="lbl-subtitle">✨ Projet PPP - Coupe du Monde 2030 ✨</p>
+                </div>
+                <div class="header-badges">
+                    <span class="badge badge-blue"><i data-lucide="cpu"></i> Deep Learning IA</span>
+                    <span class="badge badge-purple"><i data-lucide="eye"></i> Heatmaps Grad-CAM</span>
+                    <span class="badge badge-teal"><i data-lucide="activity"></i> Nutrition 100%</span>
+                </div>
+            </header>
+
+            <!-- Navigation Tabs -->
+            <nav class="tab-navigation">
+                <button class="tab-btn active" data-tab="tab-scanner">
+                    <i data-lucide="scan"></i> <span id="btn-tab-scanner">Scanner Pro</span>
+                </button>
+                <button class="tab-btn" data-tab="tab-explainability">
+                    <i data-lucide="eye"></i> <span id="btn-tab-explain">Expliquabilité AI</span>
+                </button>
+                <button class="tab-btn" data-tab="tab-analytics">
+                    <i data-lucide="bar-chart-3"></i> <span id="btn-tab-stats">Statistiques</span>
+                </button>
+                <button class="tab-btn" data-tab="tab-emergency">
+                    <i data-lucide="phone-call"></i> <span id="btn-tab-emergency">Urgences Info</span>
+                </button>
+                <button class="tab-btn" data-tab="tab-restaurants">
+                    <i data-lucide="map-pin"></i> <span id="btn-tab-restaurants">Restaurants</span>
+                </button>
+                <button class="tab-btn" data-tab="tab-about">
+                    <i data-lucide="info"></i> <span id="btn-tab-about">À propos</span>
+                </button>
+            </nav>
+
+            <!-- Tab Contents -->
+            <div class="tab-container">
+                <!-- Scanner Tab -->
+                <section class="tab-content active" id="tab-scanner">
+                    <div class="scanner-grid">
+                        <!-- Upload Card -->
+                        <div class="card glass-card upload-card">
+                            <h2 class="card-title" id="lbl-scan-section"><i data-lucide="image"></i> Scanner un plat</h2>
+                            
+                            <div class="upload-zone" id="upload-zone">
+                                <i data-lucide="cloud-upload" class="upload-icon"></i>
+                                <h3 id="lbl-drag-drop">Glissez-déposez une image ici</h3>
+                                <p id="lbl-max-size">JPG, PNG (max. 10MB)</p>
+                                <button class="btn btn-primary" id="btn-select-file">Sélectionner un fichier</button>
+                                <input type="file" id="file-input" accept="image/*" style="display: none;">
+                            </div>
+
+                            <div class="preview-container" id="preview-container" style="display: none;">
+                                <div class="image-wrapper">
+                                    <img id="image-preview" src="" alt="Plat à analyser">
+                                    <div class="scan-effect" id="scan-line" style="display: none;"></div>
+                                </div>
+                                <div class="preview-actions">
+                                    <button class="btn btn-secondary" id="btn-remove-file"><i data-lucide="trash-2"></i> Annuler</button>
+                                    <button class="btn btn-success" id="btn-analyze"><i data-lucide="play"></i> Analyser le plat</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Results Card -->
+                        <div class="card glass-card results-card">
+                            <h2 class="card-title" id="lbl-result-section"><i data-lucide="target"></i> Résultats de l'analyse</h2>
+                            
+                            <div class="empty-state" id="results-empty">
+                                <i data-lucide="search" class="empty-icon"></i>
+                                <p id="lbl-upload-prompt">Importez une image pour démarrer l'analyse de sécurité</p>
+                            </div>
+
+                            <div class="results-data" id="results-data" style="display: none;">
+                                <!-- Safety Alert -->
+                                <div class="alert" id="safety-alert">
+                                    <i id="safety-icon" data-lucide="check-circle-2"></i>
+                                    <div class="alert-content">
+                                        <h3 class="alert-title" id="safety-title">Plat Compatible</h3>
+                                        <p class="alert-desc" id="safety-desc">Ce plat ne contient aucun de vos allergènes déclarés.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Top Predictions -->
+                                <div class="prediction-block">
+                                    <h4 class="sub-section-title" id="lbl-dish-name">Plats Détectés (Top 3)</h4>
+                                    <div class="prediction-list" id="prediction-list">
+                                        <!-- Top Predictions Go Here -->
+                                    </div>
+                                    
+                                    <!-- Interactive dropdown override -->
+                                    <div class="override-block">
+                                        <label for="dish-select" id="lbl-refinement">Correction manuelle si nécessaire :</label>
+                                        <select id="dish-select" class="form-select">
+                                            <!-- Loaded options -->
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- Ingredients & Allergens -->
+                                <div class="details-block">
+                                    <h4 class="sub-section-title" id="lbl-ingredients-title">Composition du plat</h4>
+                                    <p class="ingredient-info"><strong id="lbl-ingredients-bold">Ingrédients :</strong> <span id="ingredients-text">...</span></p>
+                                    
+                                    <div class="detected-allergens-box" id="detected-allergens-box">
+                                        <strong id="lbl-allergens-bold">Allergènes détectés :</strong>
+                                        <div class="tag-container" id="allergens-tags"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Nutrition Cards -->
+                                <div class="nutrition-block">
+                                    <h4 class="sub-section-title" id="lbl-nutrition-title">Profil Nutritionnel (Est. / 100g)</h4>
+                                    <div class="nutrition-grid">
+                                        <div class="nut-card">
+                                            <span class="nut-value" id="nut-calories">0</span>
+                                            <span class="nut-label" id="lbl-calories">Calories (kcal)</span>
+                                        </div>
+                                        <div class="nut-card">
+                                            <span class="nut-value" id="nut-proteins">0g</span>
+                                            <span class="nut-label" id="lbl-proteins">Protéines</span>
+                                        </div>
+                                        <div class="nut-card">
+                                            <span class="nut-value" id="nut-carbs">0g</span>
+                                            <span class="nut-label" id="lbl-carbs">Glucides</span>
+                                        </div>
+                                        <div class="nut-card">
+                                            <span class="nut-value" id="nut-fats">0g</span>
+                                            <span class="nut-label" id="lbl-fats">Lipides</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Alternatives -->
+                                <div class="alternatives-block" id="alternatives-block">
+                                    <h4 class="sub-section-title" id="lbl-alternatives-title">Alternatives Recommandées</h4>
+                                    <ul class="alternatives-list" id="alternatives-list">
+                                        <!-- List of alternatives -->
+                                    </ul>
+                                </div>
+
+                                <!-- Export & Journal Row -->
+                                <div class="action-buttons-row" style="display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
+                                    <button class="btn btn-primary" id="btn-export-pdf" style="flex: 1; min-width: 150px;">
+                                        <i data-lucide="file-text"></i> <span id="btn-export">Exporter le Rapport PDF</span>
+                                    </button>
+                                    <button class="btn btn-success" id="btn-add-journal" style="flex: 1; min-width: 150px;">
+                                        <i data-lucide="plus-circle"></i> <span id="btn-add-journal-text">Ajouter au Journal</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Explainability Tab -->
+                <section class="tab-content" id="tab-explainability">
+                    <div class="card glass-card">
+                        <h2 class="card-title"><i data-lucide="eye"></i> Activation de la vision par ordinateur (Grad-CAM)</h2>
+                        <p class="section-intro" id="lbl-explain-desc">Cette vue permet de visualiser les régions de l'image sur lesquelles le réseau de neurones convolutif s'est concentré pour identifier le plat. Les zones rouges représentent les zones d'influence maximales.</p>
+                        
+                        <div class="empty-state" id="explain-empty">
+                            <i data-lucide="image-off" class="empty-icon"></i>
+                            <p id="lbl-explain-prompt">Veuillez d'abord scanner une image dans l'onglet 'Scanner Pro' pour afficher la carte d'activation.</p>
+                        </div>
+
+                        <div class="explainability-viewer" id="explain-viewer" style="display: none;">
+                            <div class="image-comparison">
+                                <div class="compare-card">
+                                    <h4 class="image-label" id="lbl-original-img">Image Originale</h4>
+                                    <img id="img-orig-viewer" src="" alt="Image Originale">
+                                </div>
+                                <div class="compare-card">
+                                    <h4 class="image-label" id="lbl-heatmap-img">Carte d'Activation Grad-CAM</h4>
+                                    <img id="img-heat-viewer" src="" alt="Grad-CAM Overlay">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Analytics Tab -->
+                <section class="tab-content" id="tab-analytics">
+                    <!-- Daily Nutrition Tracker -->
+                    <div class="card glass-card daily-tracker-card" style="margin-bottom: 2rem;">
+                        <div class="tracker-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+                            <h2 class="card-title" id="lbl-daily-tracker" style="margin-bottom: 0;"><i data-lucide="calendar"></i> Journal Nutritionnel du Jour</h2>
+                            <span class="badge badge-teal" id="lbl-target-cal">Objectif : 2000 kcal</span>
+                        </div>
+                        <div class="tracker-progress-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                            <div class="progress-item">
+                                <div class="progress-lbl-row" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                                    <span id="lbl-tracker-calories" style="color: #94a3b8;">Calories</span>
+                                    <span id="val-tracker-calories" style="font-weight: 600; color: #fff;">0 / 2000 kcal</span>
+                                </div>
+                                <div class="progress-bar-bg" style="height: 10px; background: rgba(255,255,255,0.06); border-radius: 999px; overflow: hidden;">
+                                    <div class="progress-bar-fill" id="bar-tracker-calories" style="width: 0%; height: 100%; transition: width 0.3s ease; background: var(--teal-glow);"></div>
+                                </div>
+                            </div>
+                            <div class="progress-item">
+                                <div class="progress-lbl-row" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                                    <span id="lbl-tracker-proteins" style="color: #94a3b8;">Protéines</span>
+                                    <span id="val-tracker-proteins" style="font-weight: 600; color: #fff;">0 / 120g</span>
+                                </div>
+                                <div class="progress-bar-bg" style="height: 10px; background: rgba(255,255,255,0.06); border-radius: 999px; overflow: hidden;">
+                                    <div class="progress-bar-fill" id="bar-tracker-proteins" style="width: 0%; height: 100%; transition: width 0.3s ease; background: var(--accent-blue);"></div>
+                                </div>
+                            </div>
+                            <div class="progress-item">
+                                <div class="progress-lbl-row" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                                    <span id="lbl-tracker-carbs" style="color: #94a3b8;">Glucides</span>
+                                    <span id="val-tracker-carbs" style="font-weight: 600; color: #fff;">0 / 250g</span>
+                                </div>
+                                <div class="progress-bar-bg" style="height: 10px; background: rgba(255,255,255,0.06); border-radius: 999px; overflow: hidden;">
+                                    <div class="progress-bar-fill" id="bar-tracker-carbs" style="width: 0%; height: 100%; transition: width 0.3s ease; background: #ffb300;"></div>
+                                </div>
+                            </div>
+                            <div class="progress-item">
+                                <div class="progress-lbl-row" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                                    <span id="lbl-tracker-fats" style="color: #94a3b8;">Lipides</span>
+                                    <span id="val-tracker-fats" style="font-weight: 600; color: #fff;">0 / 70g</span>
+                                </div>
+                                <div class="progress-bar-bg" style="height: 10px; background: rgba(255,255,255,0.06); border-radius: 999px; overflow: hidden;">
+                                    <div class="progress-bar-fill" id="bar-tracker-fats" style="width: 0%; height: 100%; transition: width 0.3s ease; background: var(--accent-red);"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="analytics-grid">
+                        <div class="card glass-card">
+                            <h2 class="card-title" id="lbl-safety-chart-title"><i data-lucide="pie-chart"></i> Répartition de la sécurité</h2>
+                            <div class="chart-container">
+                                <canvas id="chart-safety"></canvas>
+                            </div>
+                        </div>
+                        <div class="card glass-card">
+                            <h2 class="card-title" id="lbl-scan-chart-title"><i data-lucide="line-chart"></i> Historique des analyses</h2>
+                            <div class="chart-container">
+                                <canvas id="chart-history"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Restaurant Tab -->
+                <section class="tab-content" id="tab-restaurants">
+                    <div class="card glass-card">
+                        <div class="restaurant-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;">
+                            <div>
+                                <h2 class="card-title" id="lbl-restaurants-title" style="margin-bottom: 0.25rem;"><i data-lucide="store"></i> Restaurants Marocains Partenaires</h2>
+                                <p style="color: #94a3b8; font-size: 0.9rem; margin: 0;">Filtrez les restaurants certifiés de la Coupe du Monde 2030</p>
+                            </div>
+                            <div class="filter-controls" style="display: flex; align-items: center; gap: 0.75rem;">
+                                <label for="restaurant-city-filter" id="lbl-filter-city" style="color: #94a3b8; font-weight: 500;">Filtrer par ville :</label>
+                                <select id="restaurant-city-filter" class="form-select" style="min-width: 150px; background-color: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: #fff;">
+                                    <option value="all" id="lbl-all-cities">Toutes les villes</option>
+                                    <option value="Marrakech">Marrakech</option>
+                                    <option value="Casablanca">Casablanca</option>
+                                    <option value="Rabat">Rabat</option>
+                                    <option value="Fès">Fès</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="restaurants-grid" id="restaurants-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                            <!-- Restaurant Cards loaded dynamically -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Emergency Tab -->
+                <section class="tab-content" id="tab-emergency">
+                    <div class="emergency-grid">
+                        <!-- Emergency Info Card -->
+                        <div class="card glass-card">
+                            <h2 class="card-title text-red"><i data-lucide="heart-pulse"></i> Urgences Médicales Maroc 🇲🇦</h2>
+                            <p class="section-intro" id="lbl-emergency-intro">En cas de réaction allergique grave (choc anaphylactique), contactez immédiatement les services d'urgence :</p>
+                            
+                            <div class="emergency-contact-list">
+                                <div class="contact-card">
+                                    <div class="contact-num">15</div>
+                                    <div class="contact-details">
+                                        <h4>SAMU / Pompiers</h4>
+                                        <p id="lbl-samu-desc">Urgences médicales et incendies</p>
+                                    </div>
+                                </div>
+                                <div class="contact-card">
+                                    <div class="contact-num">19</div>
+                                    <div class="contact-details">
+                                        <h4>Police Nationale</h4>
+                                        <p id="lbl-police-desc">Urgences en zone urbaine</p>
+                                    </div>
+                                </div>
+                                <div class="contact-card">
+                                    <div class="contact-num">177</div>
+                                    <div class="contact-details">
+                                        <h4>Gendarmerie Royale</h4>
+                                        <p id="lbl-gendarmerie-desc">Urgences en zone rurale</p>
+                                    </div>
+                                </div>
+                                <div class="contact-card">
+                                    <div class="contact-num">05 37 68 64 64</div>
+                                    <div class="contact-details">
+                                        <h4>Centre Anti-Poison (CAPM)</h4>
+                                        <p id="lbl-capm-desc">Assistance en cas d'empoisonnement ou allergie sévère</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Anaphylaxis Symptoms Card -->
+                        <div class="card glass-card">
+                            <h2 class="card-title text-orange"><i data-lucide="alert-triangle"></i> Reconnaître les symptômes graves</h2>
+                            <div class="symptom-box">
+                                <h3 id="lbl-symptom-title">Signes de Choc Anaphylactique :</h3>
+                                <ul class="symptom-list">
+                                    <li id="lbl-sym1"><i data-lucide="check" class="text-orange"></i> Difficulté à respirer ou à avaler (gonflement de la gorge)</li>
+                                    <li id="lbl-sym2"><i data-lucide="check" class="text-orange"></i> Gonflement du visage, des lèvres ou de la langue</li>
+                                    <li id="lbl-sym3"><i data-lucide="check" class="text-orange"></i> Éruptions cutanées généralisées avec démangeaisons intenses</li>
+                                    <li id="lbl-sym4"><i data-lucide="check" class="text-orange"></i> Étourdissements, vertiges, ou perte de connaissance</li>
+                                    <li id="lbl-sym5"><i data-lucide="check" class="text-orange"></i> Nausées, vomissements ou crampes abdominales aiguës</li>
+                                </ul>
+                                <div class="alert alert-warning" style="margin-top: 1.5rem;">
+                                    <i data-lucide="info"></i>
+                                    <p id="lbl-symptom-warning"><strong>IMPORTANT :</strong> L'administration d'un auto-injecteur d'adrénaline (Epipen) doit être effectuée immédiatement si prescrite.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- About Tab -->
+                <section class="tab-content" id="tab-about">
+                    <div class="card glass-card">
+                        <h2 class="card-title"><i data-lucide="info"></i> À propos de l'application</h2>
+                        <div class="about-content">
+                            <div class="about-block">
+                                <h3>Classification System</h3>
+                                <p><strong>Model:</strong> MobileNetV2 Deep Learning Convolutional Network (Transfer Learning)</p>
+                                <p><strong>Classes Recognized:</strong> 70 Moroccan local dishes</p>
+                                <p><strong>Backend Stack:</strong> Python 3.10, FastAPI, TensorFlow 2.21.0, OpenCV, FPDF2</p>
+                                <p><strong>Frontend Stack:</strong> HTML5, Vanilla CSS3, Javascript (ES6), Chart.js, Lucide Icons</p>
+                            </div>
+                            <div class="about-block">
+                                <h3>Morocco World Cup 2030 Initiative</h3>
+                                <p>This application was developed to guarantee allergen safety for international visitors during the World Cup 2030 in Morocco, facilitating discovery of rich Moroccan culinary traditions without medical risks.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Script file -->
+    <script src="app.js"></script>
+</body>
+</html>
