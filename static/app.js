@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     let currentLanguage = "fr";
     let activeFile = null;
+    let activeFileDataURL = null;
     let analysisResult = null; // Store active analysis result
     
     // Stats tracker (saved in localStorage for persistence)
@@ -398,6 +399,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const reader = new FileReader();
         reader.onload = (e) => {
             imagePreview.src = e.target.result;
+            activeFileDataURL = e.target.result;
             uploadZone.style.display = "none";
             previewContainer.style.display = "flex";
             
@@ -413,6 +415,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     removeFileBtn.addEventListener("click", () => {
         activeFile = null;
+        activeFileDataURL = null;
         fileInput.value = "";
         uploadZone.style.display = "flex";
         previewContainer.style.display = "none";
@@ -428,15 +431,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // --- MOCK CLIENT-SIDE ANALYSIS FALLBACK ---
     function simulateClientAnalysis(fileName, userAllergies) {
         const nameLower = fileName.toLowerCase();
-        let matchedKey = "batbout"; // default
+        let matchedKey = "batbout"; // default fallback
         
-        const dbKeys = [
-            "BISSARA(feves puree)", "FEVES with sauce", "Feet of beef", "TAKTOUKA", "amlou", 
-            "apple", "bahla", "banana", "basbousa", "batbout", "beghrir", "better beldi", 
-            "briouate  with almonds", "caesar salad", "chebakia", "chicken basstila", 
-            "chicken nuggets", "chicken with potatoes and olives", "chocolate cake", "couscous"
-        ];
-        
+        // Find best match in config database
+        const dbKeys = Object.keys(config.allergens_db || {});
         for (const key of dbKeys) {
             const cleanKey = key.toLowerCase();
             if (nameLower.includes(cleanKey) || cleanKey.includes(nameLower)) {
@@ -445,53 +443,43 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
         
-        const mockDatabase = {
-            "BISSARA(feves puree)": { allergens: ["légumineuses"], description: "Purée de fèves traditionnelle", alternatives: ["zaalouk", "tomatoes and onion salad"] },
-            "FEVES with sauce": { allergens: ["légumineuses"], description: "Fèves en sauce", alternatives: ["zaalouk", "TAKTOUKA"] },
-            "Feet of beef": { allergens: ["viande"], description: "Pieds de bœuf mijotés", alternatives: ["fish and vegetables", "lentils"] },
-            "TAKTOUKA": { allergens: [], description: "Salade cuite de poivrons et tomates", alternatives: [] },
-            "amlou": { allergens: ["fruits à coque"], description: "Pâte d'amandes et argan", alternatives: ["jam", "dates"] },
-            "apple": { allergens: [], description: "Pomme fraîche", alternatives: [] },
-            "bahla": { allergens: ["gluten"], description: "Pain traditionnel", alternatives: ["dates", "orange"] },
-            "banana": { allergens: [], description: "Banane fraîche", alternatives: [] },
-            "basbousa": { allergens: ["gluten", "lait", "fruits à coque"], description: "Gâteau de semoule", alternatives: ["dates", "orange"] },
-            "batbout": { allergens: ["gluten"], description: "Pain marocain moelleux", alternatives: ["traditional bread"] },
-            "beghrir": { allergens: ["gluten", "lait"], description: "Crêpes mille trous", alternatives: ["traditional bread", "harcha"] },
-            "better beldi": { allergens: ["gluten", "lait"], description: "Beurre traditionnel", alternatives: ["jam", "amlou"] },
-            "briouate  with almonds": { allergens: ["gluten", "fruits à coque"], description: "Briouates aux amandes", alternatives: ["chebakia", "gazelle horn"] },
-            "caesar salad": { allergens: ["gluten", "œufs", "lait"], description: "Salade César", alternatives: ["tomatoes and onion salad"] },
-            "chebakia": { allergens: ["gluten", "sésame", "miel"], description: "Pâtisserie au miel", alternatives: ["gazelle horn", "dates"] },
-            "chicken basstila": { allergens: ["gluten", "œufs", "fruits à coque"], description: "Pastilla au poulet", alternatives: ["roasted chicken", "chicken with potatoes and olives"] },
-            "chicken nuggets": { allergens: ["gluten", "œufs"], description: "Nuggets de poulet", alternatives: ["roasted chicken", "meat brochettes"] },
-            "chicken with potatoes and olives": { allergens: ["viande"], description: "Poulet aux pommes de terre", alternatives: ["fish and vegetables", "tagine with vegetables"] },
-            "chocolate cake": { allergens: ["gluten", "œufs", "lait"], description: "Gâteau au chocolat", alternatives: ["dates", "orange"] },
-            "couscous": { allergens: ["gluten"], description: "Couscous traditionnel", alternatives: ["tagine with vegetables", "lentils"] }
+        const item = (config.allergens_db && config.allergens_db[matchedKey]) || {
+            allergens: [],
+            description: "Pain marocain moelleux",
+            alternatives: ["traditional bread"]
         };
         
-        const item = mockDatabase[matchedKey];
+        const dishAllergens = item.allergens || [];
         const userAllergensClean = userAllergies.map(a => a.toLowerCase().trim());
-        const detectedAllergens = item.allergens.filter(a => userAllergensClean.includes(a.toLowerCase().trim()));
+        const detectedAllergens = dishAllergens.filter(a => userAllergensClean.includes(a.toLowerCase().trim()));
         const isSafe = detectedAllergens.length === 0;
+        
+        // Match prediction confidence percentages
+        const topPredictions = [
+            { name: matchedKey, confidence: 98.0 },
+            { name: "Autre plat", confidence: 2.0 }
+        ];
+        
+        const defaultImg = "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80";
         
         return {
             success: true,
             is_safe: isSafe,
-            dish_info: {
-                name: matchedKey,
-                allergens: item.allergens,
-                description: item.description,
-                alternatives: item.alternatives
-            },
-            top_predictions: [
-                { name: matchedKey, confidence: 0.98 },
-                { name: "other dish", confidence: 0.02 }
-            ],
-            user_allergens_detected: detectedAllergens,
+            user_allergies: userAllergies,
+            detected_allergens: detectedAllergens,
+            all_dish_allergens: dishAllergens,
+            ingredients: [item.description || "Inconnu"],
+            alternatives: item.alternatives || [],
+            top_predictions: topPredictions,
             nutrition: {
                 calories: 280,
-                proteins: "7g",
-                carbs: "52g",
-                fats: "3.5g"
+                proteins: 7.0,
+                carbs: 52.0,
+                fats: 3.5
+            },
+            images: {
+                original: activeFileDataURL || defaultImg,
+                overlay: activeFileDataURL || defaultImg
             }
         };
     }

@@ -61,3 +61,10 @@ INFO:     127.0.0.1:52362 - "GET / HTTP/1.1" 304 Not Modified
 INFO:     127.0.0.1:52362 - "GET /styles.css HTTP/1.1" 304 Not Modified
 INFO:     127.0.0.1:52370 - "GET /app.js HTTP/1.1" 200 OK
 INFO:     127.0.0.1:52370 - "GET /api/config HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56028 - "GET / HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56028 - "GET /app.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56028 - "GET /api/config HTTP/1.1" 200 OK
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 28ms/step[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 39ms/step
+W0000 00:00:1780595966.839779   24551 op_kernel.cc:1858] OP_REQUIRES failed at strided_slice_op.cc:117 : INVALID_ARGUMENT: slice index 9 of dimension 1 out of bounds.
+Grad-CAM error: {{function_node __wrapped__StridedSlice_device_/job:localhost/replica:0/task:0/device:CPU:0}} slice index 9 of dimension 1 out of bounds. [Op:StridedSlice] name: strided_slice/
+INFO:     127.0.0.1:39554 - "POST /api/analyze HTTP/1.1" 200 OK
